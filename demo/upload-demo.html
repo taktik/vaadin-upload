@@ -1,0 +1,77 @@
+<script>
+  UploadDemo = superClass => {
+    return class extends superClass {
+      static get properties() {
+        return {
+        };
+      }
+    }
+  };
+</script>
+<script>
+  // Use MockHttpRequest in demos
+<script>
+  function mockXhrGenerator(file) {
+<script>
+    var xhr = new MockHttpRequest();
+<script>
+    xhr.upload = {};
+<script>
+    xhr.onsend = function() {
+<script>
+      if (xhr.upload.onloadstart) {
+<script>
+        xhr.upload.onloadstart();
+<script>
+      }
+<script>
+      var total = file && file.size || 1024, done = 0;
+<script>
+      function start() {
+<script>
+        setTimeout(progress, 1000);
+<script>
+      }
+<script>
+      function progress() {
+<script>
+        xhr.upload.onprogress({total: total, loaded: done});
+<script>
+        if (done < total) {
+<script>
+          setTimeout(progress, 200);
+<script>
+          done = Math.min(total, done + 254000);
+<script>
+        } else if (!file.abort) {
+<script>
+          setTimeout(finish, 1000);
+<script>
+        }
+<script>
+      }
+<script>
+      function finish() {
+<script>
+        xhr.receive(200, '{"message":"OK"}');
+<script>
+      }
+<script>
+      start();
+<script>
+    };
+<script>
+    return xhr;
+<script>
+  }
+<script>
+
+<script>
+  window.addEventListener('WebComponentsReady', function() {
+<script>
+    // Monkey-patch vaadin-upload prototype to use MockHttpRequest
+<script>
+    Object.getPrototypeOf(document.createElement('vaadin-upload'))._createXhr = mockXhrGenerator;
+<script>
+  });
+</script>

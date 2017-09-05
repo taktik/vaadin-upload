@@ -1,0 +1,37 @@
+{
+  "name": "Vaadin Upload",
+  "pages": [
+  {
+    "name": "Advanced Demos",
+    "url": "advanced-demos",
+    "src": "advanced-demos.html",
+    "meta": {
+      "title": "vaadin-upload Advanced Examples",
+      "description": "",
+      "image": ""
+     }
+  }
+  ,
+  {
+    "name": "I18n Demos",
+    "url": "i18n-demos",
+    "src": "i18n-demos.html",
+    "meta": {
+      "title": "vaadin-upload I18n Examples",
+      "description": "",
+      "image": ""
+     }
+  }
+  ,
+  {
+    "name": "Basic Demos",
+    "url": "basic-demos",
+    "src": "basic-demos.html",
+    "meta": {
+      "title": "vaadin-upload Basic Examples",
+      "description": "",
+      "image": ""
+     }
+  }
+  ]
+}
