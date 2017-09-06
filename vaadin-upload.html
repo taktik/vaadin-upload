@@ -713,7 +713,7 @@ Custom property | Description | Default
 
       var formData = new FormData();
 
-      file.uploadTarget = this.target || '';
+      file.uploadTarget = file.uploadTarget || this.target || '';
       file.formDataName = this.formDataName;
       var evt = this.fire('upload-before', {file: file, xhr: xhr}, {cancelable: true});
       if (evt.defaultPrevented) {
